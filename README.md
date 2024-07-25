@@ -1,5 +1,5 @@
 # pdc-assignments.github.io
 
-This repository provides the public-facing website for the **PDC Assignments** project.
+This repository contains the public-facing files for the **PDC Assignments** project's web pages.
 
-The actual website is accessed via: https://pdc-assignments.github.io.
+See https://pdc-assignments.github.io for the actual website.
