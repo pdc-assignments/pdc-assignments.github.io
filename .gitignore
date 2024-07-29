@@ -31,5 +31,8 @@
 *.out
 *.app
 
+# Editor swap files
+*.swp
+
 # Mac-generated .DS_Store files
 .DS_Store
