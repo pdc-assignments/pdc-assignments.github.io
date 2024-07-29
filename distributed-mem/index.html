@@ -12,15 +12,18 @@
   </head>
 <body>
   <h2><a href="../">PDC Assignments</a>: 
-         Distributed-Memory Parallel Computing</h2>
+         Message Passing Interface (MPI)</h2>
   <p>
   The assignments listed below provide hands-on experiences 
-  for parallel computing in distributed-memory systems,
-  such as supercomputers, Beowulf clusters, 
-  or a network of workstations (NoW), 
-  using the Message Passing Interface (MPI).
-  In each assignment, a sequential solution is provided;
-  the challenge is to use parallelism to speed up that solution.
+  for parallel computing using the
+  <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">
+  Message Passing Interface</a> (MPI),
+  a software platform for distributed-memory multiprocessing on
+  laptops, desktops, networks of workstations,
+  Beowulf clusters, and supercomputers. 
+  In each of the assignments below, a sequential solution is provided;
+  the assignment is to use MPI to speed up that solution
+  and analyze the performance improvement.
   <ol>
     <li>
       <strong>Circuit Solver</strong>.<br>
@@ -65,15 +68,17 @@
     <li>
     </li>
   </ol> 
-  Note that MPI solutions also run efficiently on multicore desktops
-  and/or laptops--but they solve a problem using multiple processes
+  Note that MPI solutions solve a problem using multiple processes
   that communicate through message-passing (instead of multiple
   threads that communicate through shared memory).
+  Free implementations of MPI include
+  <a href="https://www.mpich.org/">MPICH</a> and
+  <a href="https://www.open-mpi.org/">OpenMPI</a>.
 <p>
 <hr>
 <p>
 <a href="../">PDC Assignments</a> &gt;
-Distributed-Memory PDC
+MPI
 <p>
 </body>
 </html>
