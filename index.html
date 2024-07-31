@@ -114,7 +114,7 @@ their software/hardware platforms:
 <p>
 <ul>
  <li>
-  <a href="./mpi/">MPI (the Message Passing Interface) assignments</a>
+  <a href="./mpi/">MPI (message passing interface) assignments</a>
   can be used to explore the parallel capabilities of diverse multiprocessors,
   including single-board computers, laptops, desktops,
   networks of workstations (NoWs), Beowulf clusters, and supercomputers.
@@ -122,22 +122,27 @@ their software/hardware platforms:
  <li>
   <a href="./cpu/">CPU (multithreading) assignments</a>
   can be used to explore the parallel capabilities
-  of a computer's multicore central processing unit (CPU),
-  including single-board computers, laptops, desktops, and workstations.
+  of computers' multicore central processing units (CPUs), including
+  single-board computers, laptops, desktops, workstations, and servers.
   Supported multithreading platforms include 
   OpenMP, C++11, and OpenACC.
  </li>
  <li>
   <a href="./gpu/">GPU assignments</a>
   can be used to explore the parallel capabilities
-  of a computer's graphics processing unit (GPU).
+  of computers' graphics processing units (GPUs).
   Supported software platforms include
   CUDA, OpenACC, and OpenMP.
  </li>
 </ul> 
 All of the assignments can be completed using C or C++; 
-the distributed-memory exercises may be completed using 
-Java (via OpenMPI's Java bindings) or Python (via mpi4py).
+the MPI (message-passing) exercises may be completed using 
+Java (using <a href="https://www.open-mpi.org/">OpenMPI</a>
+which has optional
+<a href="https://docs.open-mpi.org/en/v5.0.x/features/java.html">Java bindings</a>) 
+or Python (using the
+<a href="https://mpi4py.readthedocs.io/en/stable/index.html">mpi4py</a>
+package).
 
 <p>
 <hr>
