@@ -58,14 +58,15 @@ It requires several minutes to finish on a typical Linux workstation
 The assignment is to:
 <ol>
  <li>
-  Add timing calls to the sequential solution to measure
+  Add internal timing calls (e.g., using MPI or OpenMP's calls)
+  to the beginning and end of the sequential solution to measure
   precisely how long it takes to solve the problem.
   Record that time in a spreadsheet,
   indicating that it is the time to solve the problem
   using 1 processing element (PE).
  <li>
-  Use parallel techniques to create a parallel program
-  that solves the problem.
+  Use parallel techniques to convert the sequential program
+  into a parallel program that solves the problem.
   (Hint: Convert the for loop into a <em>parallel loop</em>.)
  <li>
   In your spreadsheet, record the raw times your parallel solution
@@ -78,8 +79,9 @@ The assignment is to:
    <li> the speedup values, and 
    <li> the computational efficiency values.
   </ol>
-  Your instructor will provide additional details regarding their
-  precise expectations (which vary with different software options).
+  Depending on which software option (see below) you are using,
+  your instructor may provide additional details regarding their
+  precise expectations regarding the number of PEs you are to use.
   <li>
   Write a 1-page report in which you explain what your charts
   reveal about the relationships between the number of PEs
