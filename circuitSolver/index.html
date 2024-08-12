@@ -28,46 +28,45 @@
 <h3>Instructions:</h3>
 For a given binary circuit,
 the <em>Circuit Satisfiability Problem</em> is to
-find the set of inputs that cause that circuit to produce <tt>1</tt>
-(as opposed to <tt>0</tt> as its output.
+find the circuit's "solutions"--all inputs
+that cause that circuit to output <tt>1</tt>
+(as opposed to <tt>0</tt>)--as well as the total number of solutions.
 For example, here is a 32-bit circuit diagram: 
 <p>
 <img src="./32-Bit-Circuit.png" alt="a 32-bit circuit" height="475" width="800">
 <p>
-Since the circuit contains AND-gates, OR-gates, and inverters,
+The 32 vertical lines at the top are the binary inputs to the circuit;
+the single vertical line at the bottom-middle is the circuit's binary output.
+The circuit between the inputs and output
+contains AND-gates, OR-gates, and inverters,
 we can model that circuit in software using
 the boolean AND (&&), OR (||), and NOT (!) operators.
-The sequential programs 
-<a href=""><em>circuitSolver.c</em></a>,
-<a href=""><em>circuitSolver.cpp</em></a>,
-<a href=""><em>circuitSolver.java</em></a>,
-and <a href=""><em>circuitSolver.py</em></a>
-each take this approach,
-solving the problem using a brute-force approach.
-Each program uses a for loop to iterate through all possible inputs,
-outputting those inputs that cause the circuit to produce <tt>1</tt>.
 <p>
+This problem can be solved using a brute-force approach,
+in which a for loop iterates through all the possible inputs,
+and if a given input <em>i</em> causes the circuit to produce <tt>1</tt>,
+the program outputs <em>i</em> and increments a counter.
+After the for loop has finished, the program outputs the value of the counter.
 <p>
 <b>Note</b>:
 To find all solutions,
-this sequential program must check all <b>2<sup>32</sup></b>
+this sequential program must check <b>2<sup>32</sup></b>
 possible inputs to the circuit.
 It requires several minutes to finish on a typical Linux workstation
-(and <em>many</em> minutes if using Python).
+(and <em>many more</em> minutes if using Python).
 <p>
 The assignment is to:
 <ol>
  <li>
-  Add timing calls to the sequential solution
-  to measure precisely how long it takes
-  to solve the problem.
+  Add timing calls to the sequential solution to measure
+  precisely how long it takes to solve the problem.
   Record that time in a spreadsheet,
   indicating that it is the time to solve the problem
   using 1 processing element (PE).
  <li>
   Use parallel techniques to create a parallel program
   that solves the problem.
-  (Hint: Replace the for loop with a <em>parallel loop</em>.)
+  (Hint: Convert the for loop into a <em>parallel loop</em>.)
  <li>
   In your spreadsheet, record the raw times your parallel solution
   requires to solve the problem using a given number of PEs.
@@ -79,12 +78,12 @@ The assignment is to:
    <li> the speedup values, and 
    <li> the computational efficiency values.
   </ol>
-  Your instructor will provide additional details regarding the
+  Your instructor will provide additional details regarding their
   precise expectations (which vary with different software options).
   <li>
-  Write a 1-page essay in which you explain what your charts
-  reveal about the relationship between the number of PEs
-  and the raw time, speedup, and computational efficiency
+  Write a 1-page report in which you explain what your charts
+  reveal about the relationships between the number of PEs
+  and the raw time, the speedup, and the computational efficiency
   of your parallel program.
 </ol>
 
@@ -92,13 +91,13 @@ The assignment is to:
 Using the submission process at your institution, turn in:
 <ol>
  <li>
+  Your 1-page report.
+ <li>
+  Your three charts (one per page, maximized to fill the page).
+ <li>
+  Your spreadsheet, showing the data used to generate your charts.
+ <li>
   The source code of your parallel program.
- <li>
-  Your spreadsheet, showing the raw data.
- <li>
-  Your three charts.
- <li>
-  A copy of your 1-page essay.
 </ol>
   
 <h3>Software/Hardware Options:</h3>
@@ -112,6 +111,12 @@ Using the submission process at your institution, turn in:
 </ul>
 
 <h3>Language Options: C, C++, Java, or Python</h3>
+As starter code, the sequential programs 
+<a href=""><em>circuitSolver.c</em></a>,
+<a href=""><em>circuitSolver.cpp</em></a>,
+<a href=""><em>circuitSolver.java</em></a>,
+and <a href=""><em>circuitSolver.py</em></a>
+each solve the problem using a brute-force approach.
 
 <h3>License: MIT</h3>
 
@@ -124,7 +129,7 @@ McGraw-Hill, 2004.
 <hr>
 <p>
 <a href="../">PDC Assignments</a> &gt;
-Circuit Solver
+Circuit Satisfiability
 <p>
 <hr>
 <p>
