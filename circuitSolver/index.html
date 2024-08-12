@@ -6,7 +6,7 @@
 <meta name="keywords" content="parallel, distributed, computing, MPI, OpenMP, CUDA, OpenMPI, MPICH, OpenACC, high performance, projects, assignments, exercises, C, C++, Java, Python, mpi4py, digital, circuit, satisfiability, solver, Quinn, 32-bit">
 <meta name="author" content="Joel C. Adams">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDC Assignments</title>
+<title>PDC Assignments: Circuit Satisfiability</title>
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 <style>
@@ -16,9 +16,110 @@
 </style>
 </head>
 <body>
-<h2><a href="..">PDC Assignments</a>: Circuit Solver</h2>
+<h2><a href="..">PDC Assignments</a>: Circuit Satisfiability</h2>
 <p>
+<h3>Title: Circuit Satisfiability</h3>
 
+<h3>Topics: digital circuitry, parallel computing</h3>
+
+<h3>Prerequisites: Boolean logic, parallel loops, speedup,
+            computational efficiency</h3>
+
+<h3>Instructions:</h3>
+For a given binary circuit,
+the <em>Circuit Satisfiability Problem</em> is to
+find the set of inputs that cause that circuit to produce <tt>1</tt>
+(as opposed to <tt>0</tt> as its output.
+For example, here is a 32-bit circuit diagram: 
+<p>
+<img src="./32-Bit-Circuit.png" alt="a 32-bit circuit" height="475" width="800">
+<p>
+Since the circuit contains AND-gates, OR-gates, and inverters,
+we can model that circuit in software using
+the boolean AND (&&), OR (||), and NOT (!) operators.
+The sequential programs 
+<a href=""><em>circuitSolver.c</em></a>,
+<a href=""><em>circuitSolver.cpp</em></a>,
+<a href=""><em>circuitSolver.java</em></a>,
+and <a href=""><em>circuitSolver.py</em></a>
+each take this approach,
+solving the problem using a brute-force approach.
+Each program uses a for loop to iterate through all possible inputs,
+outputting those inputs that cause the circuit to produce <tt>1</tt>.
+<p>
+<p>
+<b>Note</b>:
+To find all solutions,
+this sequential program must check all <b>2<sup>32</sup></b>
+possible inputs to the circuit.
+It requires several minutes to finish on a typical Linux workstation
+(and <em>many</em> minutes if using Python).
+<p>
+The assignment is to:
+<ol>
+ <li>
+  Add timing calls to the sequential solution
+  to measure precisely how long it takes
+  to solve the problem.
+  Record that time in a spreadsheet,
+  indicating that it is the time to solve the problem
+  using 1 processing element (PE).
+ <li>
+  Use parallel techniques to create a parallel program
+  that solves the problem.
+  (Hint: Replace the for loop with a <em>parallel loop</em>.)
+ <li>
+  In your spreadsheet, record the raw times your parallel solution
+  requires to solve the problem using a given number of PEs.
+  For each PE value, calculate the speedup and computational efficiency.
+  Then create three line-charts that (respectively) show the relationship
+  between the number of PEs and:
+  <ol type="a">
+   <li> the raw times,
+   <li> the speedup values, and 
+   <li> the computational efficiency values.
+  </ol>
+  Your instructor will provide additional details regarding the
+  precise expectations (which vary with different software options).
+  <li>
+  Write a 1-page essay in which you explain what your charts
+  reveal about the relationship between the number of PEs
+  and the raw time, speedup, and computational efficiency
+  of your parallel program.
+</ol>
+
+<h3>Deliverables:</h3>
+Using the submission process at your institution, turn in:
+<ol>
+ <li>
+  The source code of your parallel program.
+ <li>
+  Your spreadsheet, showing the raw data.
+ <li>
+  Your three charts.
+ <li>
+  A copy of your 1-page essay.
+</ol>
+  
+<h3>Software/Hardware Options:</h3>
+<ul>
+ <li>
+  <a href="./sharedMemory">Shared Memory (Multithreading, e.g. OpenMP)</a>
+ <li>
+  <a href="./mpi">Message-Passing (MPI)</a>
+ <li>
+  <a href="./gpu">GPU (CUDA, OpenACC, OpenMP)</a>
+</ul>
+
+<h3>Language Options: C, C++, Java, or Python</h3>
+
+<h3>License: MIT</h3>
+
+<h3>Origins:</h3>
+This is a 32-bit version of the 16-bit problem presented in
+<b>Parallel programming in C with MPI and openMP</b>,
+by Michael J. Quinn,
+McGraw-Hill, 2004.
 <p>
 <hr>
 <p>
