@@ -113,51 +113,67 @@ C, C++, Java, or Python
 <p>
 Different parallel software technologies can be used
 to speedup the solution to this problem,
-depending on the available parallel hardware environment:
+depending on the available parallel hardware environment.
+The following list presents the currently supported options;
+each link is to a folder containing a source program
+and a <em>Makefile</em> that can be used to build that program.
+Each source program solves the problem 
+using a sequential brute-force approach,
+thus serving as starter code for this project.
 <ul>
  <li>
-  On a multicore CPU (i.e., a shared-memory multiprocessor),
-  <strong>multithreading</strong> may be used:<br>
+  On a multicore CPU (i.e., a shared-memory multiprocessor,
+  such as a laptop, workstation, or even single-board computer),
+  any of these may be used to solve the problem using
+  <strong>CPU multithreading</strong>:<br>
   <ul>
    <li>
-   OpenMP:
-    <a href="./c"><em>circuitSolver.c</em></a> or 
-    <a href="./c++"><em>circuitSolver.cpp</em></a>
+   OpenMP (CPU):
+    <a href="./src/c/openMP_cpu">C</a> or 
+    <a href="./src/c++/openMP_cpu">C++</a>
    <li>
     Pthreads:
-    <a href="./c"><em>circuitSolver.c</em></a> or 
-    <a href="./c++"><em>circuitSolver.cpp</em></a>
+    <a href="./src/c/pthreads">C</a> or 
+    <a href="./src/c++/pthreads">C++</a>
    <li>
     C++11 threads:
-    <a href="./c++"><em>circuitSolver.cpp</em></a>
+    <a href="./src/c++/c++11threads">C++</a>
    <li>
     Java threads:
-    <a href="./java"><em>circuitSolver.java</em></a>
+    <a href="./src/java/threads">Java</a>
+   <li>
+    OpenACC (CPU):
+    <a href="./src/c/openACC_cpu">C</a> or 
+    <a href="./src/c++/openACC_cpu">C++</a>
    </ul>
   <li>
    On any multiprocessor (distributed-memory or shared-memory),
-   <strong>message passing</strong> may be used:<br>
+   any of these may be used to solve the problem using
+   <strong>message passing</strong>:<br>
     <ul>
     <li>
      MPI:
-     <a href="./c"><em>circuitSolver.c</em></a>,
-     <a href="./c++"><em>circuitSolver.cpp</em></a>, 
-     <a href="./java"><em>circuitSolver.java</em></a> (using OpenMPI), or
-     <a href="./python"><em>circuitSolver.py</em></a> (using mpi4py)
+     <a href="./src/c/mpi">C</a>,
+     <a href="./src/c++/mpi">C++</a>, 
+     <a href="./src/java/openMPI">Java</a> (using OpenMPI), or
+     <a href="./src/python/mpi4py">Python</a> (using mpi4py)
     </ul>
   <li>
-   On a GPU, any of the following may be used:<br>
+   On a GPU,
+   any of these may be used to solve the problem using
+   <strong>GPU multithreading</strong>:<br>
    <ul>
     <li>CUDA:
-    <a href="./cuda"><em>circuitSolver.cu</em></a> or
-    <li>OpenACC, OpenMP:
-    <a href="./c"><em>circuitSolver.c</em></a> or
-    <a href="./c++"><em>circuitSolver.cpp</em></a> 
+    <a href="./src/c/cuda">CUDA-C</a> or
+    <a href="./src/c++/cuda">CUDA-C++</a>
+    <li>OpenACC (GPU): 
+    <a href="./src/c/openACC_gpu">C</a> or
+    <a href="./src/c++/openACC_gpu">C++</a> 
+    <li>OpenMP (GPU):
+    <a href="./src/c/openMP_gpu">C</a> or
+    <a href="./src/c++/openMP_gpu">C++</a> 
    </ul>
 </ul>
-Each of the preceding sequential programs 
-solve the problem using a brute-force approach,
-and thus may serve as starter code for this project.
 <p>
 
 <h3>License:</h3>
