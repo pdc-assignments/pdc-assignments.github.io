@@ -25,14 +25,15 @@ Circuit Satisfiability
 Digital circuitry, parallel computing, performance analysis
 
 <h3>Prerequisites:</h3>
-Boolean logic, parallel loops, metering, speedup, computational efficiency
+Boolean logic, parallel loops, reduction, metering, speedup, computational efficiency
 
 <h3>Instructions:</h3>
 For a given binary circuit,
 the <em>Circuit Satisfiability Problem</em> is to
-find the circuit's "solutions"--all inputs
-that cause that circuit to output <tt>1</tt>
-(as opposed to <tt>0</tt>)--as well as the total number of solutions.
+find and output the circuit's "solutions"--all the inputs
+that cause that circuit to produce the value <tt>1</tt> (or <tt>true</tt>)
+(as opposed to <tt>0</tt> or <tt>false</tt>)--as well as
+a count of the total number of solutions.
 For example, here is a 32-bit circuit diagram: 
 <p>
 <img src="./32-Bit-Circuit.png" alt="a 32-bit circuit" height="475" width="800">
@@ -52,12 +53,12 @@ After the for loop has finished, the program outputs the value of the counter.
 <p>
 <b>Note</b>:
 To find all solutions,
-this sequential program must check <b>2<sup>32</sup></b>
+the brute force algorithm must check <b>2<sup>32</sup></b>
 possible inputs to the circuit.
 It requires several minutes to finish on a typical Linux workstation
 (and <em>many more</em> minutes if using Python).
 <p>
-The assignment is to:
+The assignment is:
 <ol>
  <li>
   Starting with one of the sequential programs provided below,
@@ -105,27 +106,62 @@ Using the submission process at your institution, turn in:
   The source code of your parallel program.
 </ol>
   
-<h3>Software/Hardware Options:</h3>
-<ul>
- <li>
-  <a href="./sharedMemory">Shared Memory Multithreading (e.g., OpenMP)</a>
- <li>
-  <a href="./mpi">Message-Passing (MPI)</a>
- <li>
-  <a href="./gpu">GPU (CUDA, OpenACC, OpenMP)</a>
-</ul>
-
 <h3>Language Options:</h3>
 C, C++, Java, or Python
-<p>
-As starter code, the sequential programs 
-<a href=""><em>circuitSolver.c</em></a>,
-<a href=""><em>circuitSolver.cpp</em></a>,
-<a href=""><em>circuitSolver.java</em></a>,
-and <a href=""><em>circuitSolver.py</em></a>
-each solve the problem using a brute-force approach.
 
-<h3>License: MIT</h3>
+<h3>Parallelization Options:</h3>
+<p>
+Different parallel software technologies can be used
+to speedup the solution to this problem,
+depending on the available parallel hardware environment:
+<ul>
+ <li>
+  On a multicore CPU (i.e., a shared-memory multiprocessor),
+  <strong>multithreading</strong> may be used:<br>
+  <ul>
+   <li>
+   OpenMP:
+    <a href="./c"><em>circuitSolver.c</em></a> or 
+    <a href="./c++"><em>circuitSolver.cpp</em></a>
+   <li>
+    Pthreads:
+    <a href="./c"><em>circuitSolver.c</em></a> or 
+    <a href="./c++"><em>circuitSolver.cpp</em></a>
+   <li>
+    C++11 threads:
+    <a href="./c++"><em>circuitSolver.cpp</em></a>
+   <li>
+    Java threads:
+    <a href="./java"><em>circuitSolver.java</em></a>
+   </ul>
+  <li>
+   On any multiprocessor (distributed-memory or shared-memory),
+   <strong>message passing</strong> may be used:<br>
+    <ul>
+    <li>
+     MPI:
+     <a href="./c"><em>circuitSolver.c</em></a>,
+     <a href="./c++"><em>circuitSolver.cpp</em></a>, 
+     <a href="./java"><em>circuitSolver.java</em></a> (using OpenMPI), or
+     <a href="./python"><em>circuitSolver.py</em></a> (using mpi4py)
+    </ul>
+  <li>
+   On a GPU, any of the following may be used:<br>
+   <ul>
+    <li>CUDA:
+    <a href="./cuda"><em>circuitSolver.cu</em></a> or
+    <li>OpenACC, OpenMP:
+    <a href="./c"><em>circuitSolver.c</em></a> or
+    <a href="./c++"><em>circuitSolver.cpp</em></a> 
+   </ul>
+</ul>
+Each of the preceding sequential programs 
+solve the problem using a brute-force approach,
+and thus may serve as starter code for this project.
+<p>
+
+<h3>License:</h3>
+<a href="../LICENSE.txt">MIT</a>
 
 <h3>Origins:</h3>
 This is a 32-bit version of the 16-bit problem presented in
