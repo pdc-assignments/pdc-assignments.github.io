@@ -76,14 +76,17 @@ The assignment is:
   In your spreadsheet, record the raw times your parallel solution
   requires to solve the problem using a given number of PEs.
   For each PE value, calculate the speedup and computational efficiency.
-  Then create three line-charts that (respectively) show the relationship
-  between the number of PEs and:
+  Then create three well-labelled line-charts that (respectively)
+  show the relationship between the number of PEs and:
   <ol type="a">
    <li> the raw times,
    <li> the speedup values, and 
    <li> the computational efficiency values.
   </ol>
-  Depending on which software option you are using (see below),
+  Each chart should plot the number of PEs on the horizontal axis
+  against the other value (time, speedup, efficiency) on the vertical axis.
+  <p>
+  Depending on which parallel software option you are using (see below),
   your instructor may provide additional details regarding their
   precise expectations regarding the number of PEs you are to use.
   <li>
@@ -99,7 +102,7 @@ Using the submission process at your institution, turn in:
  <li>
   Your 1-page report.
  <li>
-  Your three charts (one per page, maximized to fill the page).
+  Your three charts (one per page, landscape, maximized to fill the page).
  <li>
   Your spreadsheet, showing the data used to generate your charts.
  <li>
@@ -109,20 +112,19 @@ Using the submission process at your institution, turn in:
 <h3>Language Options:</h3>
 C, C++, Java, or Python
 
-<h3>Parallelization Options:</h3>
+<h3>Parallel Software Options:</h3>
 <p>
 Different parallel software technologies can be used
 to speedup the solution to this problem,
-depending on the available parallel hardware environment.
+depending on the available parallel hardware.
 The following list presents the currently supported options;
 each link is to a folder containing a source program
 and a <em>Makefile</em> that can be used to build that program.
-Each source program solves the problem 
-using a sequential brute-force approach,
-and can be used as starter code for this project.
+Each source program is <em>starter code</em> for this project,
+solving the problem using a sequential brute-force approach.
 <ul>
  <li>
-  On a multicore CPU (i.e., a shared-memory multiprocessor,
+  On a computer with a multicore CPU (i.e., a shared-memory multiprocessor,
   such as a laptop, workstation, or even single-board computer),
   any of these may be used to solve the problem using
   <strong>CPU multithreading</strong>:<br>
@@ -146,6 +148,7 @@ and can be used as starter code for this project.
     <a href="./src/c/openACC_cpu">C</a> or 
     <a href="./src/c++/openACC_cpu">C++</a>
    </ul>
+   <p>
   <li>
    On any multiprocessor (distributed-memory or shared-memory),
    any of these may be used to solve the problem using
@@ -158,6 +161,7 @@ and can be used as starter code for this project.
      <a href="./src/java/openMPI">Java</a> (requires OpenMPI), or
      <a href="./src/python/mpi4py">Python</a> (requires mpi4py)
     </ul>
+   <p>
   <li>
    On a GPU,
    any of these may be used to solve the problem using
