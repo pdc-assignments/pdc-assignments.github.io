@@ -10,6 +10,11 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 <style>
+	th, td {
+  	padding: 5px;
+	}
+</style>
+<style>
       tr:nth-of-type(odd) {
       background-color:#f2f2f2;
     }
@@ -30,8 +35,8 @@ Boolean logic, parallel loops, reduction, metering, speedup, computational effic
 <h3>Instructions:</h3>
 For a given binary circuit,
 the <em>Circuit Satisfiability Problem</em> is to
-find and output the circuit's "solutions"--all the inputs
-that cause that circuit to produce the value <tt>1</tt> (or <tt>true</tt>)
+find and output all of the circuit's "solutions"--the inputs
+that cause that circuit to produce the value <tt>1</tt> or <tt>true</tt>
 (as opposed to <tt>0</tt> or <tt>false</tt>)--as well as
 a count of the total number of solutions.
 For example, here is a 32-bit circuit diagram: 
@@ -41,9 +46,10 @@ For example, here is a 32-bit circuit diagram:
 The 32 vertical lines at the top are the binary inputs to the circuit;
 the single vertical line at the bottom-middle is the circuit's binary output.
 The circuit between the inputs and output
-contains AND-gates, OR-gates, and inverters,
-we can model that circuit in software using
-the boolean AND (&&), OR (||), and NOT (!) operators.
+is made up of AND-gates, OR-gates, and NOT-gates (inverters),
+so we can model that circuit in software using a boolean expression
+consisting of AND (<tt>&&</tt>), OR (</tt>||</tt>), and NOT (<tt>!</tt>)
+operators.
 <p>
 This problem can be solved using a brute-force approach,
 in which a for loop iterates through all the possible inputs,
@@ -55,7 +61,7 @@ After the for loop has finished, the program outputs the value of the counter.
 To find all solutions,
 the brute force algorithm must check <b>2<sup>32</sup></b>
 possible inputs to the circuit.
-It requires several minutes to finish on a typical Linux workstation
+This requires several minutes to finish on a typical Linux workstation
 (and <em>many more</em> minutes if using Python).
 <p>
 The assignment is:
@@ -84,7 +90,7 @@ The assignment is:
    <li> the computational efficiency values.
   </ol>
   Each chart should plot the number of PEs on the horizontal axis
-  against the other value (time, speedup, efficiency) on the vertical axis.
+  and the other value (time, speedup, efficiency) on the vertical axis.
   Depending on which parallel software option you are using (see below),
   your instructor may provide additional details regarding their
   precise expectations, such as the number of PEs you are to use.
@@ -121,70 +127,86 @@ each link is to a folder containing a source program
 and a <em>Makefile</em> that can be used to build that program.
 Each source program is <em>starter code</em> for this project,
 solving the problem using a sequential brute-force approach.
-<ul>
- <li>
-  On a computer with a multicore CPU (i.e., a shared-memory multiprocessor,
-  such as a laptop, workstation, or even single-board computer),
-  any of these may be used to solve the problem using
-  <strong>CPU multithreading</strong>:<br>
-  <ul>
-   <li>
-   OpenMP (CPU):
-    <a href="./src/c/openMP_cpu">C</a> or 
-    <a href="./src/c++/openMP_cpu">C++</a>
-   <li>
-    Pthreads:
-    <a href="./src/c/pthreads">C</a> or 
-    <a href="./src/c++/pthreads">C++</a>
-   <li>
-    C++11 threads:
-    <a href="./src/c++/c++11threads">C++</a>
-   <li>
-    Java threads:
-    <a href="./src/java/threads">Java</a>
-   <li>
-    OpenACC (CPU):
-    <a href="./src/c/openACC_cpu">C</a> or 
-    <a href="./src/c++/openACC_cpu">C++</a>
-   </ul>
-   <p>
-  <li>
-   On any multiprocessor (distributed-memory or shared-memory),
-   any of these may be used to solve the problem using
-   <strong>message passing</strong>:<br>
-    <ul>
-    <li>
-     MPI:
-     <a href="./src/c/mpi">C</a>,
-     <a href="./src/c++/mpi">C++</a>, 
-     <a href="./src/java/openMPI">Java</a> (requires OpenMPI), or
-     <a href="./src/python/mpi4py">Python</a> (requires mpi4py)
-    </ul>
-   <p>
-  <li>
-   On a GPU,
-   any of these may be used to solve the problem using
-   <strong>GPU multithreading</strong>:<br>
-   <ul>
-    <li>CUDA:
-    <a href="./src/c/cuda">CUDA-C</a> or
-    <a href="./src/c++/cuda">CUDA-C++</a>
-    <li>OpenACC (GPU): 
-    <a href="./src/c/openACC_gpu">C</a> or
-    <a href="./src/c++/openACC_gpu">C++</a> 
-    <li>OpenMP (GPU):
-    <a href="./src/c/openMP_gpu">C</a> or
-    <a href="./src/c++/openMP_gpu">C++</a> 
-   </ul>
-</ul>
+
+<table border="1px">
+<tr align="left">
+ <th>Generality</th>
+ <th>Available Hardware</th>
+ <th>Parallel Software</th>
+ <th>Languages</th>
+</tr>
+
+<tr>
+ <td>More<br>General</td>
+ <td>A <strong>multiprocessor</strong>
+  that supports <em>multiprocessing</em></br>
+  (e.g., a laptop, workstation, network of workstations, Beowulf cluster,
+   or supercomputer)
+ </td>
+ <td>MPI<br>(the Message Passing Interface)</td>
+ <td><a href="./src/c/mpi">C</a><br>
+     <a href="./src/c++/mpi">C++</a><br> 
+     <a href="./src/java/openMPI">Java</a> (requires OpenMPI)<br>
+     <a href="./src/python/mpi4py">Python</a> (requires mpi4py)</td>
+</tr>
+
+<tr>
+ <td rowspan="5">&nbsp;</td>
+ <td rowspan="5">A <strong>computer with a multicore CPU</strong>
+     that supports <em>CPU multithreading</em><br>
+     (e.g., a laptop, workstation, single-board computer, ...)</td>
+ <td>OpenMP (CPU)</td>
+ <td><a href="./src/c/openMP_cpu">C</a><br>
+    <a href="./src/c++/openMP_cpu">C++</a></td>
+</tr>
+<tr>
+ <td>P-threads</td>
+ <td><a href="./src/c/pthreads">C</a><br>
+    <a href="./src/c++/pthreads">C++</td>
+</tr>
+<tr>
+ <td>C++11 threads</td></td>
+ <td><a href="./src/c++/c++11threads">C++</a></td>
+</tr>
+<tr>
+ <td>Java threads</td>
+ <td><a href="./src/java/threads">Java</a></td>
+</tr>
+<tr>
+ <td>OpenACC (CPU)</td>
+ <td><a href="./src/c/openACC_cpu">C</a><br>
+    <a href="./src/c++/openACC_cpu">C++</a></td>
+</tr>
+
+<tr>
+ <td rowspan="3">Less<br>General</td>
+ <td rowspan="3">A <strong>graphics processing unit (GPU)</strong>
+                 that supports <em>GPU multithreading</em><br>
+     (e.g., a graphics card with CUDA-cores)</td>
+ <td>CUDA</td>
+ <td> <a href="./src/c/cuda">CUDA-C</a><br>
+    <a href="./src/c++/cuda">CUDA-C++</a></td>
+ </tr>
+ <tr>
+ <td>OpenACC (GPU)</td>
+ <td> <a href="./src/c/openACC_gpu">C</a> <br>
+    <a href="./src/c++/openACC_gpu">C++</a></td>
+ </tr>
+ <tr>
+ <td>OpenMP (GPU)</td>
+ <td> <a href="./src/c/openMP_gpu">C</a> <br>
+    <a href="./src/c++/openMP_gpu">C++</a></td>
+</tr>
+</table> 
 <p>
 
 <h3>License:</h3>
 <a href="../LICENSE.txt">MIT</a>
 
-<h3>Origins:</h3>
-This is a 32-bit version of the 16-bit problem presented in
-<b>Parallel programming in C with MPI and openMP</b>,
+<h3>Acknowledgements/References:</h3>
+A 16-bit version of this problem was presented in
+<a href="https://archive.org/details/parallelprogramm0000quin">
+<b>Parallel programming in C with MPI and OpenMP</b></a>,
 by Michael J. Quinn,
 McGraw-Hill, 2004.
 <p>
