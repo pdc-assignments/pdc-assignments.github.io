@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--- Template for PDC Assignments index.html pages.                -->
+<!--- Search for and replace each 'TBD' with appropriate content    -->
+<!---  and modify otherwise as desired.                             -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" 
+      content="PDC programming assignments, TBD problem">
+<meta name="keywords" 
+      content="parallel, distributed, computing, MPI, OpenMP, CUDA, OpenMPI, MPICH, OpenACC, high performance, projects, assignments, exercises, C, C++, Java, Python, mpi4py, TBD">
+<meta name="author" 
+      content="Joel C. Adams">
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1.0">
+
+<title>PDC Assignments: TBD</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+<style>
+	th, td {
+  	padding: 5px;
+	}
+</style>
+<style>
+      tr:nth-of-type(odd) {
+      background-color:#f2f2f2;
+    }
+</style>
+</head>
+<body>
+<h2><a href="..">PDC Assignments</a>: TBD</h2>
+<p>
+<h3>Title:</h3>
+TBD
+
+<h3>Topics:</h3>
+TBD
+
+<h3 id="prereqs">Prerequisite Concepts:</h3>
+TBD
+
+<h3>Instructions:</h3>
+TBD
+<p>
+The assignment is:
+<ol>
+ <li>
+  Starting with one of the sequential programs provided below,
+  add internal timing calls (e.g., using MPI or OpenMP's Wtime functions)
+  to the beginning and end of the sequential program to measure
+  precisely how long it takes to solve the problem.
+  Record that time in a spreadsheet,
+  indicating that it is the time to solve the problem
+  using 1 processing element (PE).
+ <li>
+  Use parallel techniques to convert the sequential program
+  into a parallel program that solves the problem.
+  (Hint: Convert the for loop into a <em>parallel loop</em>.)
+ <li>
+  In your spreadsheet, record the raw times your parallel solution
+  requires to solve the problem using a given number of PEs.
+  For each PE value, calculate the speedup and computational efficiency.
+  Then create three well-labelled line-charts that (respectively)
+  show the relationship between the number of PEs and:
+  <ol type="a">
+   <li> the raw times,
+   <li> the speedup values, and 
+   <li> the computational efficiency values.
+  </ol>
+  Each chart should plot the number of PEs on the horizontal axis
+  and the other value (time, speedup, efficiency) on the vertical axis.
+  Depending on which parallel software option you are using (see below),
+  your instructor may provide additional details regarding their
+  precise expectations, such as the number of PEs you are to use.
+  <li>
+  Write a 1-page report in which you explain what your charts
+  reveal about the relationships between the number of PEs
+  and the raw time, the speedup, and the computational efficiency
+  of your parallel program.
+</ol>
+
+<h3>Deliverables:</h3>
+Using the submission process at your institution, turn in:
+<ol>
+ <li>
+  Your 1-page report.
+ <li>
+  Your three charts (one per page, landscape, maximized to fill the page).
+ <li>
+  Your spreadsheet, showing the data used to generate your charts.
+ <li>
+  The source code of your parallel program.
+</ol>
+  
+<h3>Language Options:</h3>
+C, C++, Java, or Python
+
+<h3>Parallel Software Options:</h3>
+<p>
+Different parallel software technologies can be used
+to speedup the solution to this problem,
+depending on the available parallel hardware.
+The following list presents the currently supported options;
+each link is to a folder containing a source program
+and a <em>Makefile</em> that can be used to build that program.
+Each source program is <em>starter code</em> for this project,
+solving the problem using a sequential brute-force approach.
+
+<table border="1px">
+<tr align="left">
+ <th>Generality</th>
+ <th>Available Hardware</th>
+ <th>Parallel Software</th>
+ <th>Languages</th>
+</tr>
+
+<tr>
+ <td>More<br>General</td>
+ <td>A <strong>multiprocessor</strong>
+  that supports <em>multiprocessing</em></br>
+  (e.g., a laptop, workstation, network of workstations, Beowulf cluster,
+   or supercomputer)
+ </td>
+ <td>MPI<br>(the Message Passing Interface)</td>
+ <td><a href="./src/c/mpi">C</a><br>
+     <a href="./src/c++/mpi">C++</a><br> 
+     <a href="./src/java/openMPI">Java</a> (requires OpenMPI)<br>
+     <a href="./src/python/mpi4py">Python</a> (requires mpi4py)</td>
+</tr>
+
+<tr>
+ <td rowspan="5">&nbsp;</td>
+ <td rowspan="5">A <strong>computer with a multicore CPU</strong>
+     that supports <em>CPU multithreading</em><br>
+     (e.g., a laptop, workstation, single-board computer, ...)</td>
+ <td>OpenMP (CPU)</td>
+ <td><a href="./src/c/openMP_cpu">C</a><br>
+    <a href="./src/c++/openMP_cpu">C++</a></td>
+</tr>
+<tr>
+ <td>P-threads</td>
+ <td><a href="./src/c/pthreads">C</a><br>
+    <a href="./src/c++/pthreads">C++</td>
+</tr>
+<tr>
+ <td>C++11 threads</td></td>
+ <td><a href="./src/c++/c++11threads">C++</a></td>
+</tr>
+<tr>
+ <td>Java threads</td>
+ <td><a href="./src/java/threads">Java</a></td>
+</tr>
+<tr>
+ <td>OpenACC (CPU)</td>
+ <td><a href="./src/c/openACC_cpu">C</a><br>
+    <a href="./src/c++/openACC_cpu">C++</a></td>
+</tr>
+
+<tr>
+ <td rowspan="3">Less<br>General</td>
+ <td rowspan="3">A <strong>graphics processing unit (GPU)</strong>
+                 that supports <em>GPU multithreading</em><br>
+     (e.g., a graphics card with CUDA-cores)</td>
+ <td>CUDA</td>
+ <td> <a href="./src/c/cuda">CUDA-C</a><br>
+    <a href="./src/c++/cuda">CUDA-C++</a></td>
+ </tr>
+ <tr>
+ <td>OpenACC (GPU)</td>
+ <td> <a href="./src/c/openACC_gpu">C</a> <br>
+    <a href="./src/c++/openACC_gpu">C++</a></td>
+ </tr>
+ <tr>
+ <td>OpenMP (GPU)</td>
+ <td> <a href="./src/c/openMP_gpu">C</a> <br>
+    <a href="./src/c++/openMP_gpu">C++</a></td>
+</tr>
+</table> 
+<p>
+
+<h3>Difficulty Level:</h3>
+<strong>Introductory</strong>, 
+provided students have been introduced to
+<a href="#prereqs">the prerequisite concepts</a>
+in the chosen parallel software. 
+
+
+<h3>License:</h3>
+<a href="../LICENSE.txt">MIT</a>
+
+<h3>Acknowledgements/References:</h3>
+TBD
+<p>
+<hr>
+<p>
+<a href="../">PDC Assignments</a> &gt;
+TBD
+<p>
+<hr>
+<p>
+</body>
+</html>
+
+
