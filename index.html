@@ -1,165 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="parallel and distributed computing programming assignments">
-<meta name="keywords" content="parallel, distributed, computing, MPI, OpenMP, CUDA, OpenMPI, MPICH, OpenACC, high performance, projects, assignments, exercises, C, C++, Java, Python, mpi4py">
-<meta name="author" content="Joel C. Adams">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDC Assignments</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
-<style>
-      tr:nth-of-type(odd) {
-      background-color:#f2f2f2;
-    }
-</style>
+  <title>PDC Assignments</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<h2>PDC Assignments</h2>
-<p>
-Welcome to <strong>PDC Assignments</strong>,
-a curated collection of computer programming assignments related to 
-<strong>parallel and/or distributed computing</strong> (PDC).
-PDC instructors may pick and choose assignments that best fit
-their course objectives.
-PDC Assignments are designed for <em>experiential learning</em>,
-aka <em>learning by doing</em>.
-<p>
-<strong>Outcomes:</strong>
-Students who successfully complete these assignments will
-gain hands-on experience applying PDC concepts and abstractions
-within the context of a PDC technology, such as multithreading,
-message-passing, etc.
+  <main>
+    <div class="container">
+      <h1 class="title">PDC Assignments</h1>
+      <div class="about">
+        <p>
+          Welcome to PDC Assignments, a curated collection of computer programming assignments related to 
+          parallel and/or distributed computing (PDC). 
+          PDC instructors may pick and choose assignments that best fit their course objectives. 
+          PDC Assignments are designed for experiential learning, aka learning by doing.
+        </p>
 
-<h3>The Assignments</h3>
-<p>
-The collection currently contains the following assignments;
-each assignment provides a sequential solution that the students
-must speed up using PDC techniques.
-<p>
-<table>
- <tr align="left">
-  <th>Assignment</th>
-  <th>Problem Overview</th>
-  <th>Problem Domain</th>
- </tr>
- <tr>
-  <td><a href="./boids/"><strong>Boids</strong></a></td>
-  <td>Compute and visualize the flocking behavior of virtual birds 
-   called bird-oids, or <em>boids</em> for short.</td>
-  <td>AI (Rules-based)</td>
- </tr>
- <tr>
-  <td><a href="./circuitSolver"><strong>Circuit Solver</strong></a></td>
-  <td>Given a 32-bit digital circuit, find its solutions--all the inputs that
-  cause the circuit to produce the value <tt>1</tt>
-  (as opposed to <tt>0</tt>).</td>
-  <td>Computer Engineering</td>
- </tr>
- <tr>
-  <td><a href="./forestFire"><strong>Forest Fire</strong></a></td>
-  <td>Using a Monte Carlo simulation, find the relationships between
-  the dryness of a forest and (i) the percentage of the forest
-  that burns, and (ii) how long the fire burns before it burns out.</td>
-  <td>Environmental Management</td>
- </tr>
- <tr>
-  <td><a href="./galaxSee"><strong>GalaxSee</strong></a>.</td>
-  <td>Using N-body problem techniques, compute and visualize a galaxy 
-  of N stars to see how the stars' positions change over time.</td>
-  <td>Computational Physics</td>
- </tr>
- <tr>
-  <td><a href="./genomeScanner"><strong>Genome Scanner</strong></a></td>
-  <td>Find how many times a genetic sequence occurs within an organism's genome,
-  and the locations of those occurrences within the genome.</td>
-  <td>Computational Biology</td>
- </tr>
- <tr>
-  <td><a href="./imageProcessing"><strong>Image Processing</strong></a></td>
-  <td>Compute and visualize image-conversion operations such as
-  inversion, gray-scale, blur, sharpen, and so on.</td>
-  <td>Photography</td>
- </tr>
- <tr>
-  <td><a href="./mandelbrot"><strong>The Mandelbrot Set</strong></a></td>
-  <td>Compute and visualize the figure discovered by Benoit Mandelbrot.</td>
-  <td>Nonlinear Mathematics</td>
- </tr>
- <tr>
-  <td><a href="./matrixAlgebra"><strong>Matrix Algebra</strong></a></td>
-  <td>Perform matrix operations such as addition, transpose, 
-  and multiplication.</td>
-  <td>AI / Mathematics</td>
- </tr>
- <tr>
-  <td><a href="./pinFinder"><strong>PIN Finder</strong></a></td>
-  <td>An employee has forgotten their personal identification number (PIN),
-  but their encrypted PIN is available.
-  Decrypt their encrypted PIN.</td>
-  <td>Computer Security</td>
- </tr>
- <tr>
-  <td><a href="./sumOfTheSquares"><strong>Sum of the Squares</strong></a></td>
-  <td>The sum of the squares measures the variance of a dataset's numbers
-  around its mean.
-  Compute the sum of the squares of a dataset's numbers,
-  which are stored in an input file.</td>
-  <td>Data Science / Statistics</td>
- </tr>
-</table>
-<p>
-If you have an assignment you have found to be especially effective
-for helping students apply PDC concepts, please
-<a href="">contact us</a>.
-
-<h3>Assignment Software/Hardware Platforms</h3>
-<p>
-Since different instructors have different technology preferences and/or
-teaching environments, the following links organize the assignments by
-their software/hardware platforms:
-<p>
-<ul>
- <li>
-  <a href="./mpi/">MPI (message passing interface) assignments</a>
-  can be used to explore the parallel capabilities of diverse multiprocessors,
-  including single-board computers, laptops, desktops,
-  networks of workstations (NoWs), Beowulf clusters, and supercomputers.
- </li>
- <li>
-  <a href="./cpu/">CPU (multithreading) assignments</a>
-  can be used to explore the parallel capabilities
-  of computers' multicore central processing units (CPUs), including
-  single-board computers, laptops, desktops, workstations, and servers.
-  Supported multithreading platforms include 
-  OpenMP, C++11, and OpenACC.
- </li>
- <li>
-  <a href="./gpu/">GPU assignments</a>
-  can be used to explore the parallel capabilities
-  of computers' graphics processing units (GPUs).
-  Supported software platforms include
-  CUDA, OpenACC, and OpenMP.
- </li>
-</ul> 
-All of the assignments can be completed using C or C++; 
-the MPI (message-passing) exercises may be completed using 
-Java (using <a href="https://www.open-mpi.org/">OpenMPI</a>
-which has optional
-<a href="https://docs.open-mpi.org/en/v5.0.x/features/java.html">Java bindings</a>) 
-or Python (using the
-<a href="https://mpi4py.readthedocs.io/en/stable/index.html">mpi4py</a>
-package).
-
-<p>
-<hr>
-<p>
-PDC Assignments
-<p>
-<hr>
-<p>
+        <h2>Outcomes</h2>
+        <p>
+          Students who successfully complete these assignments will gain hands-on experience applying PDC concepts 
+          and abstractions within the context of a PDC technology, such as multithreading, message-passing, etc.
+        </p>
+      </div>
+      <!-- A list of all the projects -->
+      <div id="project-list">
+        <!-- TEMPLATE BUTTON -->
+        <!-- <button class="button" onclick="location.href='../project-landing/project-landing.html'"><span class="text">Project Name</span></button> -->
+        
+        <button class="button" onclick="location.href='./project-landing/circuit-solver/project-landing.html'"><span class="text">Circuit Solver</span></button>
+        <button class="button" onclick="location.href='./project-landing/forest-fire/project-landing.html'"><span class="text">Forest Fire Simulator</span></button>
+        <button class="button" onclick="location.href='./project-landing/galaxsee/project-landing.html'"><span class="text">GalaxSee Simulator</span></button>
+        <button class="button" onclick="location.href='./project-landing/genome/project-landing.html'"><span class="text">Genome Scanner</span></button>
+        <button class="button" onclick="location.href='./project-landing/image-processing/project-landing.html'"><span class="text">Image Processing</span></button>
+        <button class="button" onclick="location.href='./project-landing/linear-algebra/project-landing.html'"><span class="text">Linear Algebra</span></button>
+        <button class="button" onclick="location.href='./project-landing/mandelbrot/project-landing.html'"><span class="text">Mandelbrot</span></button>
+        <button class="button" onclick="location.href='./project-landing/pin-cracker/project-landing.html'"><span class="text">Pin Cracker</span></button>
+      </div>
+    </div>
+    <footer>
+      <p>License: <a href="https://pdc-assignments.github.io/LICENSE.txt">MIT</a></p>
+      <p>This work was supported by NSF-DUE # 1822486</p>
+    </footer>
+  </main>
 </body>
-</html>
-
-
