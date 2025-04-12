@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+  <title>PDC Assignments</title>
+  <link rel="stylesheet" href="project-landing.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <!-- Header -->
+      <button id="home-button" onclick="location.href='../../index.html'">
+        <!-- get an icon from font-awesome -->
+        <i class="fas fa-home"></i>
+      </button>
+      <h1 id="page-title">Linear Algebra</h1>
+      
+      <h2>Topics</h2>
+      <p id="topics-content">
+        
+      </p>
+      
+      <h2>Prerequisites Concepts</h2>
+      <p id="prereq-content">
+        
+      </p>
+
+      <h2>Instructions</h2>
+      <p id="instructions-content">
+        The assignment is:
+        <ol>
+          <li>
+            Starting with one of the sequential programs provided below,
+            add internal timing calls (e.g., using MPI or OpenMP's Wtime functions)
+            to the beginning and end of the sequential program to measure
+            precisely how long it takes to solve the problem.
+            Record that time in a spreadsheet,
+            indicating that it is the time to solve the problem
+            using 1 processing element (PE).
+          </li>
+          <li>
+            Use parallel techniques to convert the sequential program
+            into a parallel program that solves the problem.
+            (Hint: Convert the for loop into a <em>parallel loop</em>.)
+          </li>
+          <li>
+            In your spreadsheet, record the raw times your parallel solution
+            requires to solve the problem using a given number of PEs.
+            For each PE value, calculate the speedup and computational efficiency.
+            Then create three well-labelled line-charts that (respectively)
+            show the relationship between the number of PEs and:
+            <ol type="a">
+              <li> the raw times,
+              <li> the speedup values, and 
+              <li> the computational efficiency values.
+            </ol>
+            Each chart should plot the number of PEs on the horizontal axis
+            and the other value (time, speedup, efficiency) on the vertical axis.
+            Depending on which parallel software option you are using (see below),
+            your instructor may provide additional details regarding their
+            precise expectations, such as the number of PEs you are to use.
+          </li>
+          <li>
+            Write a 1-page report in which you explain what your charts
+            reveal about the relationships between the number of PEs
+            and the raw time, the speedup, and the computational efficiency
+            of your parallel program.
+          </li>
+        </ol>
+      </p>
+      
+      <h2>Deliverables</h2>
+      <div id="deliverables-content">
+        Using the submission process at your institution, turn in:
+        <ol>
+          <!-- Add deliverables here -->
+          <li>
+            Your 1-page report.
+          <li>
+            Your three charts (one per page, landscape, maximized to fill the page).
+          <li>
+            Your spreadsheet, showing the data used to generate your charts.
+          <li>
+            The source code of your parallel program.
+        </ol>
+      </div>
+
+      <h2>Language Options</h2>
+      <p id="language-content">
+        C, C++, Java, or Python
+      </p>
+
+      <!-- Tabs (for each technology) -->
+      <div class="tabs" id="tabs-container">
+        <!-- MPI -->
+        <!-- <input type="radio" name="tabs" id="mpi-tab">
+        <label for="mpi-tab">MPI</label>
+        <div class="tab">
+          <h4>Learning Objectives</h4>
+          <ul> -->
+            <!-- Add learning objectives here -->
+            <!-- <li>Use the SPMD and Parallel Loop patterns to solve a problem.</li> 
+            <li>Compare a "chunks" and "slices" approach to the Parallel Loop pattern.</li>
+          </ul>
+
+          <h4><b>Difficulty Level:</b> Introductory</h4>
+
+          <p>
+            <a href="https://github.com/csinparallel/pdc-assignments/tree/main/LinearAlgebra" target="_blank">Starter Code</a>
+          </p>
+        </div> -->
+
+        <!-- Multithreading -->
+        <input type="radio" name="tabs" id="mt-tab">
+        <label for="mt-tab">Multithreading</label>
+        <div class="tab">
+          <h4>Learning Objectives</h4>
+          <ul>
+            <!-- Add learning objectives here -->
+            <li>Use multithreading to speed up a sequential computation.</li> 
+            <li>Compute the speedup and efficiency of a parallel computation.</li>
+          </ul>
+
+          <h4><b>Difficulty Level:</b> Introductory</h4>
+
+          <p>
+            <a href="https://github.com/csinparallel/pdc-assignments/tree/main/LinearAlgebra" target="_blank">Starter Code</a>
+          </p>
+        </div>
+
+        <!-- GPU -->
+        <input type="radio" name="tabs" id="gpu-tab">
+        <label for="gpu-tab">GPU</label>
+        <div class="tab">
+          <h4>Learning Objectives</h4>
+          <ul>
+            <!-- Add learning objectives here -->
+            <li>Use GPU offloading to speed up a sequential computation.</li> 
+            <li>Compute the speedup and efficiency of a parallel computation.</li>
+          </ul>
+
+          <h4><b>Difficulty Level:</b> Introductory</h4>
+
+          <p>
+            <a href="https://github.com/csinparallel/pdc-assignments/tree/main/LinearAlgebra" target="_blank">Starter Code</a>
+          </p>
+        </div>
+
+        <!-- Default -->
+        <div class="tab" id="default">
+          <h4>Select A Tab For More Information</h4>
+        </div>
+
+      </div>
+
+      <!-- <h2>Acknowledgements/References</h2>
+      <p id="references-content">
+        references/acknowledgements
+      </p> -->
+    </div>
+
+    <footer>
+        <p>License: <a href="https://pdc-assignments.github.io/LICENSE.txt">MIT</a></p>
+        <p>This work was supported by NSF-DUE # 1822486</p>
+      </footer>
+  </main>
+</body>
+</html>
