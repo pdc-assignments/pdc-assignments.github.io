@@ -3,21 +3,7 @@
 /* https://chatgpt.com/share/67f85f40-29f8-8000-b67b-5f2379fd37b8 */
 /* https://chatgpt.com/share/67f88691-7ecc-8000-9a0f-1e39f4fcb95c */
 
-/* Dynamic gradient background */
-main {
-    min-height: 100dvh;
-    min-width: 100%;
-    display: grid;
-    place-items: center;
-    color-scheme: light; /* currently FORCES light theme. change when light-dark functions are used to set proper colors */
-}
-
-@keyframes backgroundMove {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
+/* ANIMATIONS */
 /* fade in on load animation */
 @keyframes fadeIn {
     from {
@@ -30,6 +16,17 @@ main {
     }
 }
 
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .title, .button {
     opacity: 0;
     animation: fadeIn 1s ease-out forwards;
@@ -37,6 +34,15 @@ main {
 
 .button {
     animation-delay: 0.5s;
+}
+
+/* STATIC PAGE STYLING */
+main {
+    min-height: 100dvh;
+    min-width: 100%;
+    display: grid;
+    place-items: center;
+    color-scheme: light; /* currently FORCES light theme. change when light-dark functions are used to set proper colors */
 }
 
 /* Center the page content */
@@ -48,8 +54,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: radial-gradient(circle, rgba(255, 240, 245, 0.7), rgba(250, 225, 230, 0.5));
-    backdrop-filter: blur(10px);
-    animation: backgroundMove 12s ease-in-out infinite;
+    /* backdrop-filter: blur(10px); */
+    /* animation: backgroundMove 12s ease-in-out infinite; */
 }
 
 /* Main container styling */
@@ -77,17 +83,6 @@ body {
     text-shadow: 2px 2px 10px rgba(252, 137, 77, 0.3);
     transform: scale(0.9);
     animation: fadeInScale 1s ease-out forwards;
-}
-
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 /* Project list container */
@@ -129,12 +124,6 @@ body {
     box-shadow: 0 6px 20px rgba(243, 64, 121, 0.5);
 }
 
-/* Button pressed effect */
-.button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 10px rgba(243, 64, 121, 0.3);
-}
-
 .button span {
     transition: transform 200ms ease, opacity 200ms ease;
 }
@@ -143,6 +132,28 @@ body {
     transform: scale(0.9);
     opacity: 0.85;
 }
+
+/* Footer styling */
+footer {
+    background: linear-gradient(to right, rgba(243, 64, 121, 0.8), rgba(252, 137, 77, 0.8));
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* box-sizing: border-box; */
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+/* footer p {
+    margin: 0.25rem 0;
+} */
 
 /* Responsive Design */
 @media screen and (max-width: 991px) {
@@ -161,26 +172,4 @@ body {
         font-size: 0.9rem;
         padding: 0.5rem 1.25rem;
     }
-}
-
-/* Footer styling */
-footer {
-    background: linear-gradient(to right, rgba(243, 64, 121, 0.8), rgba(252, 137, 77, 0.8));
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    font-weight: 500;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-footer p {
-    margin: 0.25rem 0;
 }
