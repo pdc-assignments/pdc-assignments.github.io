@@ -9,6 +9,7 @@ main {
     min-width: 100%;
     display: grid;
     place-items: center;
+    color-scheme: light; /* currently FORCES light theme. change when light-dark functions are used to set proper colors */
 }
 
 @keyframes backgroundMove {
