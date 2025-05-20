@@ -154,13 +154,16 @@ footer {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .container {
-        padding: 1.25rem;
+        /* padding: 1.25rem; */
+        /* padding: 2rem; */
+        /* more padding -> less of the main background showing... */
     }
 
     .button {
         /* font-size: 0.9rem; */
         padding: 0.5rem 1rem;
         max-width: 90%;
+        outline: 2px solid red;
     }
 }
 
