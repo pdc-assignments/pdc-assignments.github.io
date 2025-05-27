@@ -46,8 +46,9 @@ main {
     color-scheme: light; /* currently FORCES light theme. change when light-dark functions are used to set proper colors */
     margin: 0;
     padding: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden; /* prevent white space on the right side of the screen */
     font-family: Arial, sans-serif;
+    font-size: 1rem;
     background: radial-gradient(circle, rgba(255, 240, 245, 0.7), rgba(250, 225, 230, 0.5));
 }
 
@@ -64,16 +65,14 @@ body {
     align-items: center;
     gap: 2rem;
     padding: 2rem;
-    /* width: 90%; */
-    width: min(90%, 700px); 
+    width: 90%;
+    /* width: min(90%, 700px);  */
+    height: 100%;
     background: rgba(255, 255, 255, 0.6);
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     /* box-sizing: border-box; */
 
-    /* height: 100%; */
-    width: 90%;
-    height: 100%;
 }
 
 /* Title styling */
@@ -139,7 +138,7 @@ footer {
     background: linear-gradient(to right, rgba(243, 64, 121, 0.8), rgba(252, 137, 77, 0.8));
     backdrop-filter: blur(4px);
     padding: 1rem;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* subtle shadow for separation */
     width: 100%;
     align-self: flex-end; /* ensure the footer is at the bottom of the page */
 
@@ -191,12 +190,28 @@ footer {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+    main {
+        font-size: 1.2rem;
+    }
     .button {
         max-width: 50%;
+        font-size: 1.2rem;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    
+    main {
+        font-size: 1.5rem;
+    }
+    .button {
+        font-size: 1.5rem;
+    }
+}
+
+/* Even larger devices (17+ inch screens) */
+@media only screen and (min-width: 1500px) {
+    .button {
+        height: 4rem;
+    }
 }
