@@ -1,11 +1,22 @@
 /* The design of this page (CSS) was aided by ChatGPT.  */
 
+
 /* Dynamic gradient background */
 main {
     background: radial-gradient(circle, rgba(255, 240, 245, 0.7), rgba(250, 225, 230, 0.5));
     backdrop-filter: blur(10px);
     animation: backgroundMove 12s ease-in-out infinite;
     min-height: 100vh;
+    overflow-x: hidden; /* prevent white space on the right side of the screen */
+}
+
+/* handle image sizing if there are images on this page */
+img {
+    width: 100%;
+    height: auto;
+    /* center image */
+    display: block;
+    margin: auto;
 }
 
 .container {
@@ -67,37 +78,33 @@ main {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    max-width: 600px;
-    width: 90vw;
     margin: 50px auto;
     padding: 25px;
 }
  
+/* hide the actual "buttons" on the radio input */
 .tabs input[type="radio"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .tabs label {
     background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
-    /* padding: 1px 25px; Reduced vertical padding to make them narrower */
     padding: 6px 16px;
     margin: 5px;
-    /* border-radius: 15px 15px 0 0; Rounded at the top, flat at the bottom */
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0; /* rounded top */
     color: #fff;
     cursor: pointer;
 
     font-family: "Codec cold", sans-serif;
-    font-size: 1rem; /* ↓ smaller font size */
-    /* font-size: 18px; */
-    /* font-weight: 700; */
+    font-size: 1rem; 
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .tabs .tab {
     width: 100%;
-    padding: 20px;
+    padding: 20px auto;
     background: #fff;
     order: 1;
     display: none;
@@ -110,18 +117,15 @@ main {
 
 /* label style for the tab/radio button that is "checked" */
 .tabs input[type="radio"]:checked + label {
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding: 12px 25px;
     background: #fff;
     color: #f34079;
-    /* border-bottom: 2px solid #f34079; */
 }
 
 #default {
     display: block;
 }
 
+/* if any tab is "checked", hide the "default" view */
 #mpi-tab:checked ~ #default,
 #mt-tab:checked ~ #default,
 #gpu-tab:checked ~ #default {
@@ -139,10 +143,11 @@ main {
     color: #f34079; /* Matching the button theme */
     text-align: center;
     margin-bottom: 10px;
+    margin: 1rem;
 }
 
-/* Description paragraph */
-.tabs .tab p {
+/* Description paragraph (if applicable) */
+.tabs .tab p { 
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
@@ -158,6 +163,7 @@ main {
     padding-bottom: 5px;
     margin-bottom: 10px;
     display: inline-block;
+    margin: 1rem;
 }
 
 /* Objectives list */
@@ -165,6 +171,7 @@ main {
     list-style: none;
     padding: 0;
     margin-top: 10px;
+    margin: 1rem;
 }
 
 /* Each objective item */
@@ -183,6 +190,7 @@ main {
 .tabs .tab a {
     display: inline-block;
     margin-top: 20px;
+    margin: 1rem;
     padding: 10px 20px;
     background: linear-gradient(135deg, #f34079 40%, #fc894d);
     color: #fff;
@@ -200,10 +208,72 @@ main {
 
 footer {
     background: linear-gradient(to right, rgba(243, 64, 121, 0.8), rgba(252, 137, 77, 0.8));
+    backdrop-filter: blur(4px); 
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* subtle shadow for separation */
+    width: 100%;
+    align-self: flex-end; /* ensure the footer is at the bottom of the page */
+
     color: white;
     text-align: center;
-    padding: 1rem;
     font-weight: 500;
-    backdrop-filter: blur(4px); /* optional: gives it a frosted look */
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* subtle shadow for separation */
+
+    /* Uncomment for "sticky" footer */
+    /* position: fixed;
+    bottom: 0;
+    left: 0; */
+}
+
+
+/* Responsive Design */
+/* Target groups based on https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Long vertical devices (ex: iPad Pro, Surface Pro) */
+@media only screen and (min-height: 992px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main {
+        font-size: 1.2rem;
+    }
+    .tabs {
+        max-width: 800px;
+    }
+    .tabs label {
+        font-size: 1.5rem;
+    }
+    img {
+        max-width: 800px;
+    }
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    /* main {
+        font-size: 1.5rem;
+    } */
+    
+}
+
+/* Even larger devices (17+ inch screens) */
+@media only screen and (min-width: 1500px) {
+    
 }

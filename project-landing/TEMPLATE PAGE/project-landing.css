@@ -67,8 +67,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    max-width: 600px;
-    width: 90vw;
     margin: 50px auto;
     padding: 25px;
 }
@@ -122,6 +120,7 @@ main {
     display: block;
 }
 
+/* if any tab is "checked", hide the "default" view */
 #mpi-tab:checked ~ #default,
 #mt-tab:checked ~ #default,
 #gpu-tab:checked ~ #default {
