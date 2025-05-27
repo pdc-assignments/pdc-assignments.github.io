@@ -63,11 +63,6 @@ img {
     animation: fadeInScale 1s ease-out forwards;
 }
 
-/* .container h2 {
-    width: 90%;
-    height: auto;
-} */
-
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -241,6 +236,10 @@ footer {
     /* shrink label sizes to prevent them from overflowing and wrapping around */
     .tabs label {
         font-size: .75rem;
+    }
+    /* reduce header size (from ~1.5em) on small screens */
+    .container h2 {
+        font-size: 1.2em;
     }
 }
 
