@@ -23,6 +23,7 @@ img {
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.6);
     min-height: 100vh;
+    padding: 2%; /* so that the text isn't right up against the edge of the screen*/
 }
 
 /* Home button styling */
@@ -245,19 +246,24 @@ footer {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    
+    /* increase font size for any screen larger than this */
+    main,
+    .tabs label,
+    .tabs .tab ul li {
+        font-size: 1.5rem;
+    }
+    .tabs .tab h3 {
+        font-size: 2.3rem;
+    }
+    .tabs .tab h4 {
+        font-size: 2.1rem;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    main {
-        font-size: 1.2rem;
-    }
     .tabs {
         max-width: 800px;
-    }
-    .tabs label {
-        font-size: 1.5rem;
     }
     img {
         max-width: 800px;
@@ -267,9 +273,6 @@ footer {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    /* main {
-        font-size: 1.5rem;
-    } */
     
 }
 
