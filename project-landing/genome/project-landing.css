@@ -79,7 +79,6 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    margin: 50px auto;
     padding: 25px;
 }
  
@@ -231,7 +230,10 @@ footer {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    
+    /* shrink label sizes to prevent them from overflowing and wrapping around */
+    .tabs label {
+        font-size: .75rem;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
