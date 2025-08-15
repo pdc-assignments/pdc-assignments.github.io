@@ -17,16 +17,42 @@
       
       <h2>Topics</h2>
       <p id="topics-content">
-
+        Mathematics, Complex Numbers, Graphics, 
       </p>
       
       <h2>Prerequisites Concepts</h2>
       <p id="prereq-content">
-
+        parallel loops (or GPU kernels), the Master-Worker paradigm, metering, speedup, computational efficiency
       </p>
 
       <h2>Instructions</h2>
       <p id="instructions-content">
+        <img src="322px-mandelbrot_set.jpg"/>
+        <p>
+          The black figure in the 2D graphic above is called the Mandelbrot Set, 
+          named after the mathematician Benoit Mandelbrot who created early visualizations of it. 
+          The values of the (x,y) points within this figure can be determined by a simple but non-linear iterative function f(x,y). 
+          For each (x,y) within the central part of the figure (shown in black), the values produced by f(x,y) converge; for each (x,y) 
+          outside of that central area (shown in shades of blue), the values produced by f(x,y) never converge (i.e., they diverge toward 
+          infinity). The boundary between these regions of convergence and divergence (shown in gold in the figure above) is a fascinating 
+          chaotic recursive fractal that contains many patterns similar to those found in the natural world. Check out the 
+          <a href="https://en.wikipedia.org/wiki/Mandelbrot_set" target="_blank">Mandelbrot Set Wikipedia page</a> for more information.
+        </p>
+        <p>
+          For MPI and multithreading solutions, create and compare two different approaches to speeding up this program:
+          <ol>
+            <li>A program that uses OpenMP's version of the "Chunks" Parallel Loop, and</li>
+            <li>A version that uses OpenMP's version of the "Slices" Parallel Loop.</li>
+          </ol>
+          The goal is to see which approach is faster for solving this problem.
+        </p>
+        <p>
+          The program uses a graphics library developed here at Calvin University called 
+          <a href="https://github.com/Calvin-CS/TSGL" target="_blank">the Thread-Safe Graphics Library</a>, aka TSGL. 
+          Other graphics libraries are not <i>thread-safe</i>, meaning if two threads try to perform graphical calls at the same time, the 
+          program will likely crash. To support multithreaded graphical programming, we developed TSGL, which lets different threads 
+          safely perform simultaneous graphics calls in approximately real-time.
+        </p>
         The assignment is:
         <ol>
           <li>
@@ -106,7 +132,7 @@
             <li>Use a Master-Worker paradigm.</li>
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Moderate</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main/Mandelbrot" target="_blank">Starter Code</a>
@@ -143,7 +169,7 @@
             <li>Use TSGL to parallelize graphical operations.</li>
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Moderate</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main/Mandelbrot" target="_blank">Starter Code</a>

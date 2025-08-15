@@ -22,11 +22,26 @@
       
       <h2>Prerequisites Concepts</h2>
       <p id="prereq-content">
-        
+        parallel loops (or GPU kernels), reduction, metering, speedup, computational efficiency
       </p>
 
       <h2>Instructions</h2>
       <p id="instructions-content">
+        <p>
+          <p> 
+            Computational models that use the <i>Monte Carlo</i> pattern model a physical phenomenon using randomness, 
+            probability, and the average of many repetitions, or <i>trials</i>, to compute "typical" behavior. The more trials that are used, 
+            the more accurate the model is in describing the physical phenomenon. However, running many trials can turn a fast program 
+            into a slow one, especially as the size of the problem (in this case, the forest size) increases. 
+          </p>
+          <p> 
+            Forest fire spread involves inherent randomness and complex interactions, making it well-suited for Monte Carlo simulation.
+            This Monte Carlo simulation is used to simulate how much a forest fire spreads in a forest of a given size with a 
+            particular likelihood of that fire spreading from one tree to the next. On each iteration of the simulation, burning 
+            trees continue to burn and have a chance of spreading fire to adjacent trees, determined by a random number generator 
+            and the specified spread probability.
+          </p>
+        </p>
         <p>
           The assignment is:
           <ol>
@@ -144,7 +159,7 @@
             <li>Utilize shared memory on the GPU</li>
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Intermediate</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main/ForestFire" target="_blank">Starter Code</a>

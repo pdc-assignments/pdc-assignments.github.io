@@ -17,21 +17,34 @@
       
       <h2>Topics</h2>
       <p id="topics-content">
-        
+        Mathematics, Matrix Algebra
       </p>
       
       <h2>Prerequisites Concepts</h2>
       <p id="prereq-content">
-        
+        parallel loops (or GPU kernels), metering, speedup, computational efficiency
       </p>
 
       <h2>Instructions</h2>
       <p id="instructions-content">
+        <p>
+          Linear algebra operations involving matrices are fundamental to many computational applications, from computer graphics to machine learning. 
+          Large matrix operations can be computationally expensive, but they are well-suited for parallelization since many calculations can 
+          be performed simultaneously. This project involves implementing core matrix operations (addition, equality, transposition, and 
+          multiplication) within a Matrix class (implemented as a struct in C). You'll then use parallel techniques such as multithreading and 
+          GPU offloading to accelerate these operations.
+        </p>
+        <p>
+          We have elected to <i>not</i> provide MPI solutions to this problem, because this problem is more suitably solved in a 
+          shared-memory parallel environment (e.g., a multicore CPU or a GPU). More precisely, distributing a Matrix's data to MPI 
+          processes is quite time-expensive--that time to distribute the data across the network may outweigh any time saved by 
+          parallelizing the Matrix operations.
+        </p>
         The assignment is:
         <ol>
           <li>
             Starting with one of the sequential programs provided below,
-            add internal timing calls (e.g., using MPI or OpenMP's Wtime functions)
+            add internal timing calls (e.g., OpenMP's Wtime functions)
             to the beginning and end of the sequential program to measure
             precisely how long it takes to solve the problem.
             Record that time in a spreadsheet,
@@ -137,9 +150,10 @@
             <!-- Add learning objectives here -->
             <li>Use GPU offloading to speed up a sequential computation.</li> 
             <li>Compute the speedup and efficiency of a parallel computation.</li>
+            <li>Use GPU offloading tools to transfer struct/class objects</li>
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Intermediate</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main/LinearAlgebra" target="_blank">Starter Code</a>

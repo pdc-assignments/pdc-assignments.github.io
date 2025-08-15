@@ -17,16 +17,27 @@
       
       <h2>Topics</h2>
       <p id="topics-content">
-
+        Encryption, Information Security
       </p>
       
       <h2>Prerequisites Concepts</h2>
       <p id="prereq-content">
-
+                parallel loops (or GPU kernels), metering, speedup, computational efficiency
       </p>
 
       <h2>Instructions</h2>
       <p id="instructions-content">
+        <p>
+          Imagine you have forgotten an 8-digit passcode used to login to your laptop. One way of attempting to get back into the device is
+          through a brute-force method. A <i>brute-force</i> approach refers to the idea of trying every possible pin combination until one works. Although this
+          would eventually work for searching through the 10<sup>8</sup> combinations (100 million possibilities with digits 0-9 in 8 positions), 
+          this is an extremely time-consuming process when done sequentially.
+        </p>
+        <p>
+          Using parallel computing techniques, we can search through this space in a fraction of the time by distributing the 
+          work across multiple processors. This project involves using MPI, multithreading, or GPU offloading to speed up the execution 
+          of a brute-force search program.
+        </p>
         The assignment is:
         <ol>
           <li>
@@ -103,7 +114,7 @@
             <li>Use asynchronous MPI communications.</li>
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Moderate</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main/PinFinder" target="_blank">Starter Code</a>
@@ -121,7 +132,7 @@
             <li>Utilize variables shared among threads.</li>
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Moderate</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main/PinFinder" target="_blank">Starter Code</a>
@@ -139,7 +150,7 @@
             <li>Utilize variables stored in device memory.</li> 
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Moderate</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main/PinFinder" target="_blank">Starter Code</a>

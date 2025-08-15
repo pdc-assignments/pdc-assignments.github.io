@@ -17,20 +17,26 @@
       
       <h2>Topics</h2>
       <p id="topics-content">
-        
+        Bioinformatics, pattern matching, parallel I/O
       </p>
       
       <h2>Prerequisites Concepts</h2>
       <p id="prereq-content">
-        
+        MPI I/O, parallel loops (or GPU kernels), metering, speedup, computational efficiency
       </p>
 
       <h2>Instructions</h2>
       <p id="instructions-content">
+        <p>
+          Given a genome and a subsequence string, the <i>Genome Scanner</i> is intended to find each instance of 
+          the substring within the genome. It returns the number of occurrences of that subsequence along with the indices 
+          where these occurrences were found. This program is designed specifically for DNA sequences using the standard nucleotide 
+          alphabet (A, T, C, G), though the underlying algorithm could be used for general string matching.
+        </p>
         The assignment is:
         <ol>
           <li>
-            Starting with one of the sequential programs provided below,
+            Starting with one of the sequential programs <b>for MPI</b> provided below,
             add internal timing calls (e.g., using MPI or OpenMP's Wtime functions)
             to the beginning and end of the sequential program to measure
             precisely how long it takes to solve the problem.
@@ -41,7 +47,6 @@
           <li>
             Use parallel techniques to convert the sequential program
             into a parallel program that solves the problem.
-            (Hint: Convert the for loop into a <em>parallel loop</em>.)
           </li>
           <li>
             In your spreadsheet, record the raw times your parallel solution
@@ -65,6 +70,13 @@
             reveal about the relationships between the number of PEs
             and the raw time, the speedup, and the computational efficiency
             of your parallel program.
+          </li>
+          <li>
+            Expand on the MPI result by performing computations using a multithreading technology.
+          </li>
+          <li>
+            Once an MPI + multithreading solution has been reached, try performing the computations with a 
+            GPU offloading technology. Compare the speedup/efficiency results of each resulting program.
           </li>
         </ol>
       </p>
@@ -140,7 +152,7 @@
             <li>Navigate limitations of GPU storage capacity.</li> 
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Advanced</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main" target="_blank">Starter Code</a>

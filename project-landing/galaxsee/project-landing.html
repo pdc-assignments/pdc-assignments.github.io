@@ -17,16 +17,29 @@
       
       <h2>Topics</h2>
       <p id="topics-content">
-        
+        Physics and Astronomy, Simulations
       </p>
       
       <h2>Prerequisites Concepts</h2>
       <p id="prereq-content">
-        
+        parallel loops (or GPU kernels), reduction, metering, speedup, computational efficiency, atomic operations
       </p>
 
       <h2>Instructions</h2>
       <p id="instructions-content">
+        <div>
+          <p>
+            The N-body problem involves predicting the movement of N celestial bodies based on their gravitational interactions. 
+            Each body's acceleration depends on the gravitational forces from all other bodies, requiring O(N<sup>2</sup>) force 
+            calculations per time step. This computational simulation models the phenomenon through iterative time steps, computing 
+            each body's acceleration and updating positions. When N is large, these calculations can become prohibitively slow. 
+            By using parallel techniques, we can distribute the acceleration computations across multiple processors simultaneously.
+          </p>
+          <p>
+            Most of the work for parallelizing this project will take place in the "calcDerivs" function, 
+            which is the main function where these acceleration computations take place.
+          </p>
+        </div>
         The assignment is:
         <ol>
           <li>
@@ -137,9 +150,10 @@
             <!-- Add learning objectives here -->
             <li>Use a software model of a real-world problem.</li> 
             <li>Use GPU offloading to speed up a sequential model.</li>
+            <li>Use GPU offloading tools to transfer struct/class objects</li>
           </ul>
 
-          <h4><b>Difficulty Level:</b> Introductory</h4>
+          <h4><b>Difficulty Level:</b> Advanced</h4>
 
           <p>
             <a href="https://github.com/csinparallel/pdc-assignments/tree/main/GalaxSee" target="_blank">Starter Code</a>

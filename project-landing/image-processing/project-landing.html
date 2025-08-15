@@ -17,21 +17,35 @@
       
       <h2>Topics</h2>
       <p id="topics-content">
-        
+        Digital images and photography
       </p>
       
       <h2>Prerequisites Concepts</h2>
       <p id="prereq-content">
-         
+         parallel loops (or GPU kernels), metering, speedup, computational efficiency
       </p>
 
       <h2>Instructions</h2>
       <p id="instructions-content">
+        <p>
+          Images can be processed by modifying the RGB values of individual pixels to achieve effects such as inverting the colors of an 
+          image. Since many image processing operations can treat each pixel independently, this work is 
+          well-suited for parallelization. By processing multiple pixels simultaneously across different threads, we can achieve 
+          significant speedups over sequential processing. This project involves implementing various image processing algorithms and 
+          using multithreading to accelerate image transformations.
+        </p>
+        <p>
+          The program uses a graphics library developed here at Calvin University called 
+          <a href="https://github.com/Calvin-CS/TSGL" target="_blank">the Thread-Safe Graphics Library</a>, aka TSGL. 
+          Other graphics libraries are not <i>thread-safe</i>, meaning if two threads try to perform graphical calls at the same time, the 
+          program will likely crash. To support multithreaded graphical programming, we developed TSGL, which lets different threads 
+          safely perform simultaneous graphics calls in approximately real-time.
+        </p>
         The assignment is:
         <ol>
           <li>
             Starting with one of the sequential programs provided below,
-            add internal timing calls (e.g., using MPI or OpenMP's Wtime functions)
+            add internal timing calls (e.g., using OpenMP's Wtime functions)
             to the beginning and end of the sequential program to measure
             precisely how long it takes to solve the problem.
             Record that time in a spreadsheet,
